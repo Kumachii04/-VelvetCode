@@ -1,0 +1,221 @@
+/* sycap.css - Versión con 4 cards por fila en pantallas grandes */
+:root {
+    --primary-color: #4361ee;
+    --secondary-color: #3f37c9;
+    --accent-color: #4895ef;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+    --success-color: #4cc9f0;
+    --warning-color: #f72585;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f7fa;
+    color: var(--dark-color);
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+    margin-bottom: 2rem;
+    box-shadow: var(--box-shadow);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+main {
+    max-width: 1400px; /* Aumenté el ancho máximo para acomodar 4 cards */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.error {
+    background-color: var(--warning-color);
+    color: white;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.categoria-detalle {
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+}
+
+.categoria-detalle-imagen {
+    max-width: 300px;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    margin-bottom: 1.5rem;
+    box-shadow: var(--box-shadow);
+}
+
+.categoria-detalle h2 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.categoria-detalle p {
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.productos-categoria {
+    margin-bottom: 3rem;
+}
+
+.productos-categoria h2 {
+    color: black;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    text-align: center;
+    padding-bottom: 0.5rem;
+}
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas fijas en pantallas grandes */
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.producto-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.producto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.producto-imagen {
+    width: 100%; 
+    height: 200px;
+    object-fit: contain; 
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.producto-card h3 {
+    color: black;
+    margin: 1rem 1rem 0.5rem;
+    font-size: 1.3rem;
+}
+
+.producto-card p {
+    margin: 0 1rem 1rem;
+    color: #0b0b0b;
+    flex-grow: 1;
+}
+
+.precio {
+    font-weight: bold;
+    color: black;
+    font-size: 1.2rem;
+    margin: 0.5rem 1rem 1rem !important;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: rgb(19, 12, 12);
+    padding: 0.7rem 1.5rem;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    margin: 1rem;
+}
+
+.btn:hover {
+    background-color: #16e554;
+}
+
+.btn-detalle {
+    background-color: #f0ec09;
+}
+
+.btn-detalle:hover {
+    background-color: #17ac73;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    background-color: var(--dark-color);
+    color: white;
+    margin-top: 3rem;
+}
+
+footer .btn {
+    background-color: var(--accent-color);
+}
+
+footer .btn:hover {
+    background-color: var(--success-color);
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+    .productos-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas en pantallas medianas */
+    }
+}
+
+@media (max-width: 900px) {
+    .productos-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .categoria-detalle-imagen {
+        max-width: 200px;
+        max-height: 200px;
+    }
+}
+
+@media (max-width: 600px) {
+    .productos-grid {
+        grid-template-columns: 1fr; /* 1 columna en móviles */
+    }
+    
+    .categoria-detalle {
+        padding: 1rem;
+    }
+}
